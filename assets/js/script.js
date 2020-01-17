@@ -1,6 +1,7 @@
 $(window).scroll(() => {
     var wScroll = $(this).scrollTop();
-    if (wScroll > 100) {
+    const infoTop = $("#info-nav").offset().top + $("#info-nav").height();
+    if (wScroll > infoTop) {
         $("#main-nav").addClass("fixed-top");
         $("#main-nav").addClass("shadow-sm");
     } else {

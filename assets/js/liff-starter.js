@@ -14,7 +14,9 @@ window.onload = function () {
             }).catch((error) => {
                 $('#liffAppContent').addClass('hidden');
                 nodeIdErrorMessage = `
-                    <p>Unable to receive the LIFF ID as an environment variable.</p>
+                    <div class="alert alert-danger" role="alert">
+                        <p>Unable to receive the LIFF ID as an environment variable.</p>
+                    </div>
                 `;
                 $('#errorMessage').html(nodeIdErrorMessage);
                 $('#errorMessage').removeClass('hidden');
@@ -33,21 +35,23 @@ function initializeLiffOrDie(myLiffId) {
     if (!myLiffId) {
         $('#liffAppContent').addClass('hidden');
         liffIdErrorMessage = `
-            <p>You have not assigned any value for LIFF ID.</p>
-            <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your
+            <div class="alert alert-danger" role="alert">
+                <p>You have not assigned any value for LIFF ID.</p>
+                <p>If you are running the app using Node.js, please set the LIFF ID as an environment variable in your
                 Heroku account follwing the below steps: </p>
-            <code id="code-block">
-                <ol>
-                    <li>Go to \`Dashboard\` in your Heroku account.</li>
-                    <li>Click on the app you just created.</li>
-                    <li>Click on \`Settings\` and toggle \`Reveal Config Vars\`.</li>
-                    <li>Set \`MY_LIFF_ID\` as the key and the LIFF ID as the value.</li>
-                    <li>Your app should be up and running. Enter the URL of your app in a web browser.</li>
-                </ol>
-            </code>
-            <p>If you are using any other platform, please add your LIFF ID in the <code>index.html</code> file.</p>
-            <p>For more information about how to add your LIFF ID, see <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF
-                    app</a>.</p>
+                <code id="code-block">
+                    <ol>
+                        <li>Go to \`Dashboard\` in your Heroku account.</li>
+                        <li>Click on the app you just created.</li>
+                        <li>Click on \`Settings\` and toggle \`Reveal Config Vars\`.</li>
+                        <li>Set \`MY_LIFF_ID\` as the key and the LIFF ID as the value.</li>
+                        <li>Your app should be up and running. Enter the URL of your app in a web browser.</li>
+                    </ol>
+                </code>
+                <p>If you are using any other platform, please add your LIFF ID in the <code>index.html</code> file.</p>
+                <p>For more information about how to add your LIFF ID, see <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF
+                        app</a>.</p>
+            </div>
         `;
         $('#errorMessage').html(liffIdErrorMessage);
         $('#errorMessage').removeClass('hidden');
@@ -69,9 +73,11 @@ function initializeLiff(myLiffId) {
     }).catch((error) => {
         $('#liffAppContent').addClass('hidden');
         liffInitErrorMessage = `
-            <p>Something went wrong with LIFF initialization.</p>
-            <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error
-            occurs in the process of <code>liff.init()</code>.
+            <div class="alert alert-danger" role="alert">
+                <p>Something went wrong with LIFF initialization.</p>
+                <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error
+                occurs in the process of <code>liff.init()</code>.
+            </div>
         `;
         $('#errorMessage').html(liffInitErrorMessage);
         $('#errorMessage').removeClass('hidden');
