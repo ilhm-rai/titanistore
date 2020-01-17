@@ -87,10 +87,16 @@ function initializeApp() {
         $('#login-div').addClass('hidden');
         $('#logout-div').removeClass('hidden');
         $('#cart-div').removeClass('hidden');
+        $('.card-footer').each((card) => {
+            $('.card-footer').eq(card).removeClass('hidden');
+        });
     } else {
         $('#login-div').removeClass('hidden');
         $('#logout-div').addClass('hidden');
         $('#cart-div').addClass('hidden');
+        $('.card-footer').each((card) => {
+            $('.card-footer').eq(card).addClass('hidden');
+        });
     }
 
     if (liff.isInClient()) {
@@ -121,7 +127,7 @@ function registerButtonHandlers() {
     $('#sendMessageButton').click(() => {
         liff.sendMessage([{
             'type': 'text',
-            'text': 'Halo sahabat Tani! Selamat bergabung bersama Kami di website Titani Indonesia tempat para petani lokal.'
+            'text': 'Halo sahabat Tani! Selamat bergabung bersama Kami di website Titani Indonesia tempat para petani lokal di seluruh Indonesia.'
         }]);
     });
 

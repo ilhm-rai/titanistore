@@ -91,7 +91,7 @@ function loadTitaniStore() {
                         </div>
                         <div class="card-footer border-top-0 bg-white">
                             <a href="javascript:void(0)" onclick="getProduct('${list_product[i].id_product}')" class="btn btn-titani" data-toggle="modal"
-                                data-target="#addToCart" data-whatever="@mdo" style="width: 100%;")>Tambahkan Ke
+                                data-target="#addToCart" data-whatever="@mdo" style="width: 100%;">Tambahkan Ke
                                 Keranjang</a>
                         </div>
                     </div>
