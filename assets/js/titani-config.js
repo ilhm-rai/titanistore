@@ -3,10 +3,10 @@ function createTitaniStore() {
     insert_product = [];
     id_product = 0;
     list_product.push({
-        'product': ['Apel', 'Kangkung', 'Jeruk', 'Jengkol', 'Bayam', 'Durian Montong', 'Mangga', 'Salak Pondoh', 'Jambu', 'Belimbing', 'Buah Naga', 'Manggis'],
+        'product': ['Apel', 'Kangkung', 'Jeruk', 'Jengkol', 'Anggur', 'Durian Montong', 'Mangga', 'Salak Pondoh', 'Jambu', 'Belimbing', 'Buah Naga', 'Manggis'],
         'location': ['Malang', 'Jakarta', 'Tasikmalya', 'Bandung', 'Tasikmalya', 'Malang', 'Malang', 'Jakarta', 'Tasikmalya', 'Bandung', 'Tasikmalya', 'Tangerang', 'Bogor', 'Denpasar', 'Tasikmalaya'],
-        'price': [25000, 2000, 20000, 18000, 2000, 50000, 10000, 6000, 5000, 17000, 24000, 23000],
-        'image': ['046382000_1491031821-20170401-Apel', '092922700_1547523741-shutterstock_200569799', '058168400_1558099815-iStock-1058241246', '078407700_1564479270-iStock-941217460', '053759900_1550295023-shutterstock_429789493', '019966500_1541581867-Durian_1', '047936900_1552731027-foto_HL_mangga', '064756900_1494144012-Kemenpar_7_Mei__4__OK', '071323300_1574936975-jambu-fruits-219387_1280', '086460500_1556885614-belimbing', '088792400_1526618679-Atasi-Hipertensi-dengan-Buah-Naga-By-Bennyartist-shutterstock_326428622', '097800600_1563278409-iStock-465572969']
+        'price': [25000, 2000, 20000, 18000, 27000, 50000, 10000, 6000, 5000, 17000, 24000, 23000],
+        'image': ['046382000_1491031821-20170401-Apel', '092922700_1547523741-shutterstock_200569799', '058168400_1558099815-iStock-1058241246', '078407700_1564479270-iStock-941217460', '024056500_1481545022-centroone_com', '019966500_1541581867-Durian_1', '047936900_1552731027-foto_HL_mangga', '064756900_1494144012-Kemenpar_7_Mei__4__OK', '071323300_1574936975-jambu-fruits-219387_1280', '086460500_1556885614-belimbing', '088792400_1526618679-Atasi-Hipertensi-dengan-Buah-Naga-By-Bennyartist-shutterstock_326428622', '097800600_1563278409-iStock-465572969']
     });
     list_product.forEach((data) => {
         for (let i = 0; i < data.product.length; i++) {
@@ -111,6 +111,7 @@ function loadTitaniStore() {
             <li class="breadcrumb-item active" aria-current="page">Titani Store</li>
         `;
         $('#mainContent').html(data_product);
+        $('#errorMessage').addClass('hidden');
         $('#breadcrumb').html(breadcrumb);
     }
 }
@@ -220,6 +221,7 @@ function loadMyCart() {
         <li class="breadcrumb-item active" aria-current="page">Keranjang Saya</li>
     `;
     $('#mainContent').html(data_cart);
+    $('#errorMessage').addClass('hidden');
     $('#breadcrumb').html(breadcrumb);
 }
 

@@ -16,7 +16,8 @@ window.onload = function () {
                 nodeIdErrorMessage = `
                     <p>Unable to receive the LIFF ID as an environment variable.</p>
                 `;
-                $('#mainContent').html(nodeIdErrorMessage);
+                $('#errorMessage').html(nodeIdErrorMessage);
+                $('#errorMessage').removeClass('hidden');
             });
     } else {
         myLiffId = defaultLiffId;
@@ -48,7 +49,8 @@ function initializeLiffOrDie(myLiffId) {
             <p>For more information about how to add your LIFF ID, see <a href="https://developers.line.biz/en/reference/liff/#initialize-liff-app">Initializing the LIFF
                     app</a>.</p>
         `;
-        $('#mainContent').html(liffIdErrorMessage);
+        $('#errorMessage').html(liffIdErrorMessage);
+        $('#errorMessage').removeClass('hidden');
     } else {
         initializeLiff(myLiffId);
     }
@@ -71,7 +73,8 @@ function initializeLiff(myLiffId) {
             <p>LIFF initialization can fail if a user clicks "Cancel" on the "Grant permission" screen, or if an error
             occurs in the process of <code>liff.init()</code>.
         `;
-        $('#mainContent').html(liffInitErrorMessage);
+        $('#errorMessage').html(liffInitErrorMessage);
+        $('#errorMessage').removeClass('hidden');
     });
 }
 
@@ -89,12 +92,39 @@ function initializeApp() {
         $('#logout-div').addClass('hidden');
         $('#cart-div').addClass('hidden');
     }
+
+    if (liff.isInClient()) {
+        $('#liffAppContent').removeClass('hidden');
+    } else {
+        $('#liffAppContent').addClass('hidden');
+    }
 }
 
 /**
  * Register event handlers for the buttons displayed in the app
  */
 function registerButtonHandlers() {
+    // Open window call
+    $('#openWindowButton').click(() => {
+        liff.openWindow({
+            url: 'https://titani.herokuapp.com/', // Isi dengan Endpoint URL aplikasi web Anda
+            external: true
+        });
+    });
+
+    // Close window call
+    $('#closeWindowButton').click(() => {
+        liff.closeWindow();
+    });
+
+    // Send message call
+    $('#sendMessageButton').click(() => {
+        liff.sendMessage([{
+            'type': 'text',
+            'text': 'Halo sahabat Tani! Selamat bergabung bersama Kami di website Titani Indonesia tempat para petani lokal.'
+        }]);
+    });
+
     // login call, only when external browser is used
     $('#login-btn').click(() => {
         if (!liff.isLoggedIn()) {
@@ -102,6 +132,8 @@ function registerButtonHandlers() {
             liff.login();
         }
     });
+
+    // logout call, only when external browser is used
     $('#logout-btn').click(() => {
         if (liff.isLoggedIn()) {
             liff.logout();
