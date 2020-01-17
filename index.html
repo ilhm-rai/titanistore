@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titani Indonesia | Hasil Bumi Petani Lokal</title>
+    <!-- Font awesome css file -->
+    <link rel="stylesheet" href="./assets/css/all.min.css">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
+    <!-- Bootstrap css file -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Custom css file -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <link rel="icon" type="image/png" sizes="196x196" href="./favicon-196.png">
+    <script>
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white" id="liffAppContent">
+        <div class="container">
+            <div class="ml-auto">
+                <div class="d-flex flex-wrap align-items-center">
+                    <div class="flex-fill">
+                        <button class="btn btn-titani" type="submit">Open External Browser</button>
+                    </div>
+                    <div class="flex-fill">
+                        <button class="btn btn-danger" type="submit">Close LIFF App</button>
+                    </div>
+                    <div class="flex-fill">
+                        <button class="btn btn-info" type="submit">Send Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar nav-titani navbar-expand-lg navbar-light bg-titani hide-on-sm">
+        <div class="container">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white pl-0" href="#">
+                        Download
+                        Aplikasi
+                        Titani</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Bantuan
+                    </a>
+                    <div class="dropdown-menu shadow-sm" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Pembayaran</a>
+                        <a class="dropdown-item" href="#">Pengiriman</a>
+                        <a class="dropdown-item" href="#">Tukar Points</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Bantuan</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-phone-square mr-2"></i> +62 823 1740 5455</a>
+                        <a class="dropdown-item" href="#"><i class="fa fa-mail-bulk mr-2"></i>
+                            customer.care@titani.com</a>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Jual di Titani</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Titani Points</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white pr-0" href="#">Tanam bersama Titani</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white" id="main-nav">
+        <div class="container">
+            <div class="navbar-brand">
+                <a class="" href="#">
+                    <img src="./assets/img/Titani_Website_Logo.png" width="114px" alt="Image">
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="form-inline mr-auto ml-auto">
+                    <div class="form-row align-items-center" style="width: 100%;">
+                        <div class="nav-search col-auto" style="width: 100%;">
+                            <label class="sr-only" for="inlineFormInputGroup">Pencarian</label>
+                            <div class="input-group form-titani">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white border-right-0 text-light-gray"><i
+                                            class="fa fa-search"></i>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control border-left-0" id="inlineFormInputGroup"
+                                    placeholder="Mau cari apa hari ini?">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="ml-auto">
+                    <div class="d-flex flex-row align-items-center">
+                        <div class="p-2 hidden" id="login-div">
+                            <button class="btn btn-titani" type="submit" id="login-btn">Masuk</button>
+                        </div>
+                        <div id="cart-div">
+                            <button class="btn btn-titani text-white position-relative" type="submit"
+                                onclick="loadMyCart();" id="cart-btn"><i class="fa fa-shopping-cart"></i><span
+                                    id="productInCart" class="position-absolute pl-1 pr-1 rounded-pill bg-danger"
+                                    style="top: -10px; right: -5px; font-size: 12px;"></span></button>
+                        </div>
+                        <div class="p-2 hidden" id="logout-div">
+                            <button class="btn btn-titani text-white" type="submit" id="logout-btn">Keluar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav aria-label="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb bg-white" id="breadcrumb">
+            </ol>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-3 hide-on-sm">
+                <div>
+                    <p>Produk</p>
+                    <div class="dropdown-divider mb-3"></div>
+                    <form>
+                        <div class="form-row align-items-center">
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInputGroup">Ketik untuk mencari</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text bg-white border-right-0 text-light-gray"><i
+                                                class="fa fa-search"></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control border-left-0" id="inlineFormInputGroup"
+                                        placeholder="Ketik untuk mencari">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="mt-3">
+                    <p>Lokasi Petani</p>
+                    <div class="dropdown-divider mb-3"></div>
+                    <form>
+                        <div class="form-row align-items-center">
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInputGroup">Ketik untuk mencari</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text bg-white border-right-0 text-light-gray"><i
+                                                class="fa fa-search"></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control border-left-0" id="inlineFormInputGroup"
+                                        placeholder="Ketik untuk mencari">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="dropdown-divider mb-3"></div>
+                    <div class="sidebar-item-frame overflow-auto">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck7">
+                            <label class="custom-control-label" for="customCheck7">Tasikmalaya</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck8">
+                            <label class="custom-control-label" for="customCheck8">Bandung</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck9">
+                            <label class="custom-control-label" for="customCheck9">Jakarta</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck10">
+                            <label class="custom-control-label" for="customCheck10">Bekasi</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck11">
+                            <label class="custom-control-label" for="customCheck11">Papua</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck12">
+                            <label class="custom-control-label" for="customCheck12">Samarinda</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck13">
+                            <label class="custom-control-label" for="customCheck13">Bogor</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="customCheck14">
+                            <label class="custom-control-label" for="customCheck14">Tangerang</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3">
+                    <p>Harga</p>
+                    <div class="dropdown-divider mb-3"></div>
+                    <form>
+                        <div class="form-row align-items-center">
+                            <div class="col-auto">
+                                <label class="sr-only" for="inlineFormInputGroup">Harga Minimun</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text bg-white border-right-0">
+                                            <sup class="pt-2">Rp</sup>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control border-left-0" id="inlineFormInputGroup"
+                                        placeholder="Minimun">
+                                </div>
+                                <label class="sr-only" for="inlineFormInputGroup">Harga Maksimun</label>
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text bg-white border-right-0">
+                                            <sup class="pt-2">Rp</sup>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control border-left-0" id="inlineFormInputGroup"
+                                        placeholder="Maksimun">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="mt-3">
+                    <p>Rating</p>
+                    <div class="dropdown-divider mb-3"></div>
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                        class="fa fa-star"></i><i class="fa fa-star"></i>
+                    <br>
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                        class="fa fa-star"></i><i class="fa fa-star text-black-50"></i> Ke atas
+                    <br>
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                        class="fa fa-star text-black-50"></i><i class="fa fa-star text-black-50"></i> Ke atas
+                    <br>
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star text-black-50"></i><i
+                        class="fa fa-star text-black-50"></i><i class="fa fa-star text-black-50"></i> Ke atas
+                    <br>
+                    <i class="fa fa-star"></i><i class="fa fa-star text-black-50"></i><i
+                        class="fa fa-star text-black-50"></i><i class="fa fa-star text-black-50"></i><i
+                        class="fa fa-star text-black-50"></i> Ke atas
+                </div>
+            </div>
+            <div class="col-12 col-lg-9" id="mainContent">
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="addToCart" tabindex="-1" role="dialog" aria-labelledby="addToCartLabel"
+        aria-hidden="true" data-backdrop="static">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0">
+                    <h5 class="modal-title" id="productLabel">Nama Produk
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="messageShow"></div>
+                    <form>
+                        <input type="hidden" class="form-control bg-white" id="idProduct">
+                        <div class="form-group">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white border-right-0">
+                                        <sup class="pt-2">Rp</sup>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control bg-white border-left-0" id="price" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="qtyOrder" class="col-form-label">Pesan</label>
+                            <div class="input-group mb-2">
+                                <input type="number" class="form-control border-right-0" id="qtyOrder"
+                                    placeholder="Minimun 5">
+                                <div class="input-group-append">
+                                    <div class="input-group-text bg-white border-left-0">
+                                        <sup class="pt-2">Kg</sup>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="total" class="col-form-label">Total</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white border-right-0">
+                                        <sup class="pt-2">Rp</sup>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control border-left-0 bg-white" id="total" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group hidden" id="groupPayment">
+                            <label for="payment" class="col-form-label">Pembayaran</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text bg-white border-right-0">
+                                        <sup class="pt-2">Rp</sup>
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control border-left-0 bg-white" id="payment">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer border-top-0">
+                    <button type="button" class="btn btn-titani" onclick="addToCart();">Tambahkan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar nav-titani navbar-expand-lg navbar-light bg-titani pt-2 pb-2
+     ">
+        <div class="container">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <span class="nav-link text-white p-0">
+                        Copyright &copy; 2020, All Right Reserved by Titani Indonesia.</span>
+            </ul>
+        </div>
+    </nav>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- Integrasi LIFF SDK dan konfigurasi aplikasi catatan sederhana -->
+    <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
+    <!-- Konfigurasi data Titani Store -->
+    <script src="./assets/js/titani-config.js"></script>
+    <!-- LIFF js file -->
+    <script src="./assets/js/liff-starter.js"></script>
+    <!-- Custom js file -->
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

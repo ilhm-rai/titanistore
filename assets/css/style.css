@@ -1,0 +1,142 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px !important;
+}
+.text-titani{
+    color: #50D890;
+}
+
+.btn {
+    font-size: 13px !important;
+    text-transform: uppercase;
+}
+
+.bg-titani{
+    background-color: #50D890;
+}
+.btn-titani{
+    height: auto;
+    font-size: 13px;
+}
+.btn-titani{
+    background-color: #50D890;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.btn-titani:hover{
+    color: #FFFFFF;
+    background-color: #40bd7a;
+}
+
+a.text-titani:hover{
+    color: #40bd7a;
+}
+
+.form-titani{
+    width: 450px !important;
+    height: 45px;
+    font-size: 0.85rem;
+}
+
+#main-nav{
+    padding: .5rem 0;
+}
+#main-nav .btn-titani{
+    height: 45px !important;
+}
+.card-title{
+    font-size: 14px;
+}
+.small-text{
+    font-size: 12px;
+}
+.big-text{
+    font-size: 16px;
+    font-weight: bold;
+}
+p{
+    margin-bottom: 0;
+}
+.dropdown-item{
+    font-size: 13px;
+}
+.hidden{
+    display: none;
+}
+
+.form-titani .form-control{
+    height: auto;
+    font-size: 13px;
+}
+
+.text-light-gray{
+    color: lightgray;
+}
+
+.nav-titani{
+    padding: 0 1rem;
+}
+
+.nav-titani a{
+    padding: .4rem 1rem;
+    font-size: 12px;
+}
+.breadcrumb{
+    padding: .75rem 0;
+}
+.breadcrumb-item a{
+    color: #50D890 !important;
+}
+
+.custom-control{
+    line-height: 25px;
+}
+.form-control{
+    height: 35px;
+    font-size: 13px;
+}
+
+.sidebar-item-frame{
+    height: 150px;
+}
+
+.fa.fa-star{
+    color: yellow;
+}
+
+#liffAppContent .flex-fill{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+@media (max-width: 993px){
+    .hide-on-sm{
+        display: none;
+    }
+    .form-titani{
+        width: 100% !important;
+    }
+    .form-inline .form-row{
+        margin: 0 !important;
+    }
+    #main-nav{
+        padding: .3rem .8rem;
+    }
+    .nav-search.col-auto{
+        padding: 0 !important;
+    }
+    .collapse .form-inline{
+        margin-bottom: .5rem;
+    }
+    .btn{
+        width: 100% !important;
+        margin-bottom: 5px;
+    }
+}
+@media (max-width: 273px){
+    #liffAppContent .flex-fill{
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
