@@ -98,8 +98,8 @@ function initializeApp() {
         });
     } else {
         $('#login-div').removeClass('hidden');
-        $('#logout-div').addClass('hidden');
-        $('#cart-div').addClass('hidden');
+        // $('#logout-div').addClass('hidden');
+        // $('#cart-div').addClass('hidden');
         $('.card-footer').each((card) => {
             $('.card-footer').eq(card).addClass('hidden');
         });
