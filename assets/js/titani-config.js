@@ -227,6 +227,7 @@ function loadMyCart() {
 
 
 function getProduct(id) {
+    $('#messageShow').addClass('hidden');
     if (localStorage.list_product && localStorage.id_product) {
         list_product = JSON.parse(localStorage.getItem('list_product'));
         idx_product = 0;
