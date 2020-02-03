@@ -11,8 +11,9 @@
     <!-- Google fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto&display=swap" rel="stylesheet">
     <!-- Bootstrap css file -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <!-- Custom css file -->
     <link rel="stylesheet" href="./assets/css/style.css">
 
@@ -22,7 +23,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white" id="liffAppContent">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white hidden" id="liffAppContent">
         <div class="container">
             <div class="ml-auto">
                 <div class="d-flex flex-wrap align-items-center">
@@ -79,7 +80,7 @@
             </ul>
         </div>
     </nav>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white" id="main-nav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm" id="main-nav">
         <div class="container">
             <div class="navbar-brand">
                 <a class="" href="#">
@@ -112,7 +113,7 @@
                         <div class="p-2" id="login-div">
                             <button class="btn btn-titani" type="submit" id="login-btn">Masuk</button>
                         </div>
-                        <div id="cart-div" class="hidden">
+                        <div id="cart-div">
                             <button class="btn btn-titani text-white position-relative" type="submit"
                                 onclick="loadMyCart();" id="cart-btn"><i class="fa fa-shopping-cart"></i><span
                                     id="productInCart" class="position-absolute pl-1 pr-1 rounded-pill bg-danger"
@@ -126,9 +127,9 @@
             </div>
         </div>
     </nav>
-    <nav aria-label="breadcrumb">
+    <nav aria-label="breadcrumb" style="background-color:#E9ECEF;">
         <div class="container">
-            <ol class="breadcrumb bg-white" id="breadcrumb">
+            <ol class="breadcrumb" id="breadcrumb">
             </ol>
         </div>
     </nav>
@@ -351,7 +352,7 @@
             </ul>
         </div>
     </nav>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -359,7 +360,9 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
+    <script src="./assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
     <!-- Integrasi LIFF SDK dan konfigurasi aplikasi catatan sederhana -->
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <!-- Konfigurasi data Titani Store -->
