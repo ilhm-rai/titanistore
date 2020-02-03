@@ -1,5 +1,4 @@
 # titani-store
-
 Fresh plants from local Indonesian farmers
 
 https://titanistore.herokuapp.com/
