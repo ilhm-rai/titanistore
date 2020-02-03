@@ -1,3 +1,3 @@
 # titani-store
 
-https://titani.herokuapp.com/
+https://titanistore.herokuapp.com/
